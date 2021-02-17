@@ -1,0 +1,209 @@
+/* 
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+*/
+
+:root{
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+
+html{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif ;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color:white ;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+li{
+    list-style: none;
+    margin: 0 5px;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+/*--------------------------------------------------- BACKGROUND ---------------------------------------------------------------*/
+
+body{
+    height: ;
+    background-color: var(--violet);
+    background-image: url(images/bg-desktop.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+@media(max-width: 1300px){
+    body{
+        height: 50vh;
+        background-image: url(images/bg-mobile.svg);
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+}
+
+/*---------------------------------------------------  LAYOUT ---------------------------------------------------------------*/
+
+main{
+    margin: auto 80px;
+    display: grid;
+    grid-template-columns: auto 40%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header                 header"
+    "section-illu         section-content"
+    "footer                  footer";
+}
+
+@media(max-width:1300px){
+    main{
+        margin: auto 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+header{
+    grid-area: header;
+}
+
+.section-illu{
+    grid-area: section-illu;
+}
+
+.section-content{
+    grid-area: section-content;
+}
+
+footer{
+    grid-area: footer;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+header{
+    margin: 50px 0 100px 0;
+}
+
+@media(max-width:1300px){
+    header{
+        margin: 50px 0 75px 0;
+       align-self: flex-start;
+    }
+    header img{
+        width: 75%;
+        height: auto;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+.section-illu img{
+    max-height: 500px;
+    width: auto;
+}
+
+@media(max-width:1300px){
+.section-illu img{
+    max-width: 100%;
+}
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+.section-content h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 30px auto;
+}
+
+.section-content p{
+    margin-bottom: 30px;
+}
+
+.section-content button{
+    border: none;
+    border-radius: 30px;
+    padding:20px 70px;
+    background: white;
+    color: var(--violet);
+    font-size: 1rem;
+    box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.56);
+}
+
+.section-content button:hover{
+    color: white;
+    background: var(--soft-magenta);
+}
+
+@media(max-width:1300px){
+    .section-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .section-content h1{
+        font-size: 1.5rem;
+    }
+    .section-content button{
+        width: 80%;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+footer ul{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media(max-width:1300px){
+    footer ul{
+        margin: 75px auto 50px auto;
+    }
+}
+
+footer ul li a{
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   border: 2px solid white;
+   padding: 5px;
+   margin:5px;
+}
+
+footer ul li a:hover{
+    border:2px solid var(--soft-magenta);
+    color: var(--soft-magenta);
+}
